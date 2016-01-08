@@ -1,0 +1,13 @@
+cd Desktop
+git clone https://...git
+ls
+git status
+git add README.md
+git commit -help
+git commit -m "message"
+git push -u origin master
+
+settings ->Colaborators add people
+cd Repos/
+mkdir hyle333
+git clone https:// ...git
