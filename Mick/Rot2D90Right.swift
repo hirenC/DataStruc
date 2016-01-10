@@ -7,22 +7,18 @@
 //
 
 
-struct Point: CustomStringConvertible {
-    var x: Int = 0
-    var y: Int = 0
-
-    var description: String {
-        return "(\(x), \(y))"
+func rotate90Right(inout arr: [[Int]]) {
+    struct Point {
+        let x: Int
+        let y: Int
     }
-}
-
-public func rotate90Right(inout arr: [[Int]]) {
+    
     for shift in 0 ..< arr.count / 2 {
         for offset in shift ..< arr.count.predecessor() - shift {
             var last = Point(x: offset, y: shift)
             var save = arr[last.y][last.x]
 
-            for _ in 0 ... 3 {
+            for _ in 1 ... 4 {
                 let next = Point(x: arr.count.predecessor() - last.y, y: last.x)
                 let tmp = arr[next.y][next.x]
                 arr[next.y][next.x] = save
