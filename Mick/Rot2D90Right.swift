@@ -17,13 +17,10 @@ struct Point: CustomStringConvertible {
 }
 
 public func rotate90Right(inout arr: [[Int]]) {
-    var last = Point(x: 0, y: 0)
-    var save = arr[last.x][last.y]
-
     for shift in 0 ..< arr.count / 2 {
         for offset in shift ..< arr.count.predecessor() - shift {
-            last = Point(x: offset, y: shift)
-            save = arr[last.y][last.x]
+            var last = Point(x: offset, y: shift)
+            var save = arr[last.y][last.x]
 
             for _ in 0 ... 3 {
                 let next = Point(x: arr.count.predecessor() - last.y, y: last.x)
