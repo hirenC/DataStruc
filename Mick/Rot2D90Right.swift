@@ -18,7 +18,7 @@ func rotate90Right(inout arr: [[Int]]) {
             var last = Point(x: offset, y: shift)
             var save = arr[last.y][last.x]
 
-            for _ in 1 ... 4 {
+            for _ in 0 ..< 4 {
                 let next = Point(x: arr.count.predecessor() - last.y, y: last.x)
                 let tmp = arr[next.y][next.x]
                 arr[next.y][next.x] = save
